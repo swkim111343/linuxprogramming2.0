@@ -1,0 +1,10 @@
+1. 예제 8-3에서 SmartTV 객체 htv가 생성될 때 자동으로 호출되는 생성자를 순서대로 자세히 설명하시오.
+- WideTV의 초기화 리스트 TV(size)에 의해 가장 먼저 호출, SmartTV로 전달된 size 값이 그대로 전달되는 TV(int size)호출,
+SmartTV의 초기화 리스트 WideTV(size, true)에 의해 호출, size는 50, videoIn은 true가 전달된다.(WideTV(int size, bool videoIn))
+마지막으로 SmartTV 자신의 생성자가 호출, ipAddr은 전달받은 문자열이, size는 50이 사용(SmartTV(string ipAddr, int size))
+
+2. htv 생성시 지정된 인수가 각 생성자에 어떻게 전달되는지도 자세히 설명하시오.
+-"192.168.0.10" → SmartTV의 ipAddr 파라미터 
+50 → SmartTV의 size 파라미터 → WideTV(size, true)로 전달 → WideTV는 TV(size)로 전달
+true (하드코드) → WideTV의 videoIn 파라미터 
+결과적으로 TV::size = 50, WideTV::videoIn = true, SmartTV::ipAddr = "192.168.0.10".
